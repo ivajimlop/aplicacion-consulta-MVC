@@ -10,12 +10,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import controlador.ControladorCargaPrimerCombo;
+import controlador.ControladorBotonEjecuta;
+import controlador.ControladorCargaMenus;
 
 public class Marco_Aplicacion2 extends JFrame {
 	
 	public JComboBox primerComboBox, segundoComboBox;
-	private JTextArea resultado;
+	public JTextArea resultado;
 
 	public Marco_Aplicacion2() {
 			
@@ -57,7 +58,9 @@ public class Marco_Aplicacion2 extends JFrame {
 			
 			add(botonConsulta, BorderLayout.SOUTH);
 			
-			addWindowListener(new ControladorCargaPrimerCombo(this));
+			botonConsulta.addActionListener(new ControladorBotonEjecuta(this));
+			
+			addWindowListener(new ControladorCargaMenus(this));
 	}
 
 }
